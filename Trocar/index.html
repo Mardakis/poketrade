@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas para Troca/Venda - Pokémon TCG Exchange</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="trocar.css">
+</head>
+<body>
+    <div class="background"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Pokémon TCG</a>
+            <div class="nav-links">
+                <a href="../procurar/index.html" class="nav-link">Cartas que Procuro</a>
+                <a href="index.html" class="nav-link active">Cartas que troco/vendo</a>
+                <button id="favoritesButton">⭐ Favoritos</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">Cartas Disponíveis para Troca/Venda</h1>
+        
+        <div class="controls-container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar cartas..." list="cardSuggestions">
+                <datalist id="cardSuggestions"></datalist>
+                <button id="searchButton">🔍</button>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <h3>Tags:</h3>
+                    <div class="tag-filters">
+                        <label><input type="checkbox" name="tag" value="Raro"> Raro</label>
+                        <label><input type="checkbox" name="tag" value="Holo"> Holo</label>
+                        <label><input type="checkbox" name="tag" value="Promo"> Promo</label>
+                        <label><input type="checkbox" name="tag" value="1ª Edição"> 1ª Edição</label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Preço:</h3>
+                    <div class="price-range">
+                        <input type="range" id="priceMin" min="0" max="1000" value="0">
+                        <input type="range" id="priceMax" min="0" max="1000" value="1000">
+                        <div class="price-labels">
+                            <span id="minPriceLabel">R$ 0</span>
+                            <span id="maxPriceLabel">R$ 1000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Ordenar por:</h3>
+                    <select id="sortOrder">
+                        <option value="recentes">Mais recentes</option>
+                        <option value="preco_asc">Preço: Menor → Maior</option>
+                        <option value="preco_desc">Preço: Maior → Menor</option>
+                        <option value="nome_asc">Nome (A-Z)</option>
+                        <option value="nome_desc">Nome (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-grid" id="cardsContainer">
+            <div class="loading">Carregando cartas...</div>
+        </div>
+
+        <div class="pagination" id="paginationControls"></div>
+    </main>
+
+    <script src="js/trocar.js"></script>
+</body>
+</html>

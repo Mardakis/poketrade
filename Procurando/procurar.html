@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas que Procuro - Pokémon TCG Exchange</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="procurar.css">
+</head>
+<body>
+    <div class="background"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Pokémon TCG</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Cartas que Procuro</a>
+                <a href="../trocar/index.html" class="nav-link">Cartas que troco/vendo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">Cartas que Estou Procurando</h1>
+        
+        <div class="cards-grid" id="cardsContainer">
+            <!-- Cards serão inseridos aqui via JavaScript -->
+            <div class="loading">Carregando cartas...</div>
+        </div>
+
+        <div class="pagination" id="paginationControls">
+            <!-- Controles de paginação serão gerados aqui -->
+        </div>
+    </main>
+
+    <script src="js/procurar.js"></script>
+</body>
+</html>
