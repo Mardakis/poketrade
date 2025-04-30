@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartas que Procuro - Pokémon TCG Exchange</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="procurar.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartas que Procuro – PokéTrade</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="background"></div>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Pokémon TCG</a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link active">Cartas que Procuro</a>
-                <a href="../trocar/index.html" class="nav-link">Cartas que troco/vendo</a>
-            </div>
-        </div>
-    </nav>
+  <div class="background"></div>
 
-    <main class="container">
-        <h1 class="page-title">Cartas que Estou Procurando</h1>
-        
-        <div class="cards-grid" id="cardsContainer">
-            <!-- Cards serão inseridos aqui via JavaScript -->
-            <div class="loading">Carregando cartas...</div>
-        </div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Pokémon TCG</a>
+      <div class="nav-links">
+        <a href="procurar.html" class="nav-link active">Cartas que Procuro</a>
+        <a href="trocar.html" class="nav-link">Cartas que Troco/Vendo</a>
+        <button id="favoritesButton">⭐ Favoritos</button>
+      </div>
+    </div>
+  </nav>
 
-        <div class="pagination" id="paginationControls">
-            <!-- Controles de paginação serão gerados aqui -->
-        </div>
-    </main>
+  <main class="container">
+    <h1 class="page-title">Cartas que Procuro</h1>
 
-    <script src="js/procurar.js"></script>
+    <div class="controls-container">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar cartas..." />
+        <button id="searchButton">🔍</button>
+      </div>
+      <div class="filters">
+        <div class="filter-group">
+          <h3>Tags:</h3>
+          <div class="tag-filters">
+            <label><input type="checkbox" name="tag" value="Raro" /> Raro</label>
+            <label><input type="checkbox" name="tag" value="Holo" /> Holo</label>
+            <label><input type="checkbox" name="tag" value="Promo" /> Promo</label>
+            <label><input type="checkbox" name="tag" value="1ª Edição" /> 1ª Edição</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Ordenar por:</h3>
+          <select id="sortOrder">
+            <option value="recentes">Mais recentes</option>
+            <option value="nome_asc">Nome (A–Z)</option>
+            <option value="nome_desc">Nome (Z–A)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="cardsContainer" class="cards-grid">
+      <div class="loading">Carregando cartas...</div>
+    </div>
+
+    <div id="paginationControls" class="pagination"></div>
+  </main>
+
+  <script src="procurar.js"></script>
 </body>
 </html>

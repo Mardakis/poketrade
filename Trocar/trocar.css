@@ -1,4 +1,29 @@
-/* Estilos atualizados */
+/* Fundo estilizado: fundo preto com efeito neon */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%);
+    z-index: -1;
+}
+
+:root {
+  --neon-purple: #9c27b0;
+  --neon-pink: #e91e63;
+  --card-bg-dark: rgba(20, 20, 20, 0.8);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -6,17 +31,18 @@
 }
 
 .page-title {
-    color: white;
+    color: var(--neon-pink);
     text-align: center;
     margin-bottom: 2rem;
-    text-shadow: 0 0 10px var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-pink);
 }
 
 .controls-container {
     margin-bottom: 2rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--card-bg-dark);
     padding: 1rem;
     border-radius: 10px;
+    box-shadow: 0 0 10px var(--neon-purple);
 }
 
 .search-bar {
@@ -30,9 +56,19 @@
     padding: 0.8rem;
     border-radius: 25px 0 0 25px;
     border: 2px solid var(--neon-purple);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     font-size: 1rem;
+}
+
+#searchButton {
+    padding: 0.8rem;
+    border-radius: 0 25px 25px 0;
+    border: 2px solid var(--neon-purple);
+    background: var(--neon-purple);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--neon-purple);
 }
 
 #cardSuggestions {
@@ -40,14 +76,14 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #2a2a2a;
+    background: #222;
     border-radius: 0 0 10px 10px;
     z-index: 1000;
 }
 
 #cardSuggestions option {
     padding: 0.5rem;
-    color: white;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -63,9 +99,10 @@
 }
 
 .filter-group {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg-dark);
     padding: 1rem;
     border-radius: 8px;
+    box-shadow: 0 0 8px var(--neon-purple);
 }
 
 .filter-group h3 {
@@ -80,7 +117,7 @@
 }
 
 .tag-filters label {
-    color: white;
+    color: #fff;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -104,19 +141,57 @@
     -webkit-appearance: none;
     width: 15px;
     height: 15px;
-    background: var(--neon-purple);
+    background: var(--neon-pink);
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0 0 5px var(--neon-pink);
 }
 
 .price-labels {
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: #fff;
     font-size: 0.9rem;
 }
 
-/* ... (mantenha o restante do CSS anterior) ... */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    position: relative;
+    background: var(--card-bg-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px var(--neon-purple);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    filter: drop-shadow(0 0 5px var(--neon-purple));
+}
+
+.card-info {
+    padding: 0.75rem;
+}
+
+.card-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
 
 .favorite-button {
     position: absolute;
@@ -126,16 +201,35 @@
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-    color: #666;
+    color: #ffeb3b;
     transition: color 0.3s;
 }
 
-.favorite-button.active {
+.favorite-button.active,
+.favorite-button:hover {
     color: #ffd700;
 }
 
-.favorite-button:hover {
-    color: #ffd700;
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.pagination button {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background: var(--neon-purple);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--neon-purple);
+}
+
+.pagination button.disabled {
+    opacity: 0.5;
+    cursor: default;
 }
 
 #favoritesButton {
@@ -146,6 +240,7 @@
     color: white;
     cursor: pointer;
     transition: opacity 0.3s;
+    box-shadow: 0 0 5px var(--neon-purple);
 }
 
 #favoritesButton:hover {

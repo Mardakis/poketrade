@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon TCG Exchange</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéTrade</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="background"></div>
+  <header>
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Pokémon TCG</a>
-            <div class="nav-links">
-                <a href="#procurar" class="nav-link">Cartas que Procuro</a>
-                <a href="#trocar" class="nav-link">Cartas que troco/vendo</a>
-            </div>
-        </div>
+      <div class="logo">PokéTrade</div>
+      <ul class="nav-links">
+        <li><a href="#procurar">Procurar Cartas</a></li>
+        <li><a href="#trocar">Trocar/Vender Cartas</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
     </nav>
-    
-    <main class="content">
-        <div class="overlay">
-            <h1 class="neon-text">Bem-vindo ao Pokémon TCG Exchange</h1>
-            <p class="subtitle">Gerencie sua coleção e conecte-se com outros treinadores!</p>
-        </div>
-    </main>
+  </header>
 
-    <script src="script.js"></script>
+  <main>
+    <section id="hero">
+      <h1>Bem-vindo ao PokéTrade</h1>
+      <p>Compre, venda e troque cartas Pokémon com facilidade.</p>
+    </section>
+
+    <section id="procurar">
+      <h2>Procurar Cartas</h2>
+      <!-- Aqui vamos injetar as cartas que você está procurando -->
+      <div id="procuro-list" class="card-container"></div>
+    </section>
+
+    <section id="trocar">
+      <h2>Trocar/Vender Cartas</h2>
+      <!-- Aqui vamos injetar as cartas que você oferece -->
+      <div id="troco-list" class="card-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PokéTrade. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartas para Troca/Venda - Pokémon TCG Exchange</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="trocar.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartas para Troca/Venda - PokéTrade</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="trocar.css" />
 </head>
 <body>
     <div class="background"></div>
@@ -14,7 +14,7 @@
             <a href="../index.html" class="logo">Pokémon TCG</a>
             <div class="nav-links">
                 <a href="../procurar/index.html" class="nav-link">Cartas que Procuro</a>
-                <a href="index.html" class="nav-link active">Cartas que troco/vendo</a>
+                <a href="index.html" class="nav-link active">Cartas que Troco/Vendo</a>
                 <button id="favoritesButton">⭐ Favoritos</button>
             </div>
         </div>
@@ -25,34 +25,35 @@
         
         <div class="controls-container">
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Buscar cartas..." list="cardSuggestions">
+                <input type="text" id="searchInput" placeholder="Buscar cartas..." list="cardSuggestions" />
                 <datalist id="cardSuggestions"></datalist>
                 <button id="searchButton">🔍</button>
             </div>
             
             <div class="filters">
+                <!-- Tags -->
                 <div class="filter-group">
                     <h3>Tags:</h3>
                     <div class="tag-filters">
-                        <label><input type="checkbox" name="tag" value="Raro"> Raro</label>
-                        <label><input type="checkbox" name="tag" value="Holo"> Holo</label>
-                        <label><input type="checkbox" name="tag" value="Promo"> Promo</label>
-                        <label><input type="checkbox" name="tag" value="1ª Edição"> 1ª Edição</label>
+                        <label><input type="checkbox" name="tag" value="Raro" /> Raro</label>
+                        <label><input type="checkbox" name="tag" value="Holo" /> Holo</label>
+                        <label><input type="checkbox" name="tag" value="Promo" /> Promo</label>
+                        <label><input type="checkbox" name="tag" value="1ª Edição" /> 1ª Edição</label>
                     </div>
                 </div>
-                
+                <!-- Preço -->
                 <div class="filter-group">
                     <h3>Preço:</h3>
                     <div class="price-range">
-                        <input type="range" id="priceMin" min="0" max="1000" value="0">
-                        <input type="range" id="priceMax" min="0" max="1000" value="1000">
+                        <input type="range" id="priceMin" min="0" max="5000" value="0" />
+                        <input type="range" id="priceMax" min="0" max="5000" value="5000" />
                         <div class="price-labels">
                             <span id="minPriceLabel">R$ 0</span>
-                            <span id="maxPriceLabel">R$ 1000</span>
+                            <span id="maxPriceLabel">R$ 5000</span>
                         </div>
                     </div>
                 </div>
-
+                <!-- Ordem -->
                 <div class="filter-group">
                     <h3>Ordenar por:</h3>
                     <select id="sortOrder">
